@@ -1,0 +1,20 @@
+button {
+  padding: 10px 20px;
+  border-radius: 2px;
+  border: none;
+}
+
+.plus {
+  background: red;
+  color: white;
+}
+
+.minus {
+  background: blue;
+  color: white;
+  margin-right: 5px;
+}
+
+span {
+  margin-right: 5px;
+}
