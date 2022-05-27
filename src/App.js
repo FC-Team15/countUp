@@ -1,24 +1,21 @@
 import React from 'react';
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { plus, minus } from './counter/countSlice';
+
 import './App.css';
 
 export default function App() {
-  const [Count, setCount] = useState(0);
+  const counter = useSelector(state => state.counter.value);
+  const dispatch = useDispatch();
 
-  const countff = () => {
-    setCount((prev) => prev + 1);
-  };
-  const countff1 = () => {
-    setCount((prev) => prev - 1);
-  };
 
   return (
     <div>
-      <button className="minus" onClick={countff1}>
+      <button className="minus" onClick={() => dispatch(minus())}>
         -
       </button>
-      <span>{Count}</span>
-      <button className="plus" onClick={countff}>
+      <span>{counter}</span>
+      <button className="plus" onClick={() => dispatch(plus())}>
         +
       </button>
     </div>
